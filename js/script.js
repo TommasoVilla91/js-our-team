@@ -44,15 +44,15 @@ const renderList = () => {
   for (let i = 0; i < teamMembers.length; i++) {
     const {name, role, email, img} = teamMembers[i];
     const memberCard = `
-    <div class="card col-lg-4 col-md-10 me-md-1" style="max-width: 28rem;">
+    <div class="card col-lg-5 col-md-10">
       <div class="row">
           <div class="col-4 p-0">
-              <img src="./${img}" alt="" class="img-fluid rounded-start">
+              <img src="./${img}" alt="" class="card-img-top rounded-start">
           </div> 
           <div class="col-8">
-              <div class="card-body p-lg-0 d-flex flex-column align-items-center">
-                  <h5 class="card-name">${name}</h5>
-                  <p class="card-role">${role}</p>
+              <div class="card-body pb-lg-1 d-flex flex-column align-items-center">
+                  <h5 class="card-text">${name}</h5>
+                  <p class="card-text">${role}</p>
                   <span class="card-email">${email}</span>
               </div>
           </div>                    
