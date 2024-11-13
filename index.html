@@ -11,13 +11,42 @@
 </head>
 
 <body>
-    <div class="container text-center mt-5">
-        <h1>Meet out Team</h1>
-        <p class="mt-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta sequi neque omnis eum, placeat
-            culpa. Vitae in, exercitationem velit cupiditate voluptatem, quo consequuntur quam impedit, minima accusamus
-            optio veniam nam.</p>
+    <div class="container">
+        <section class=" text-center mt-5">
+            <h1>Meet our Team</h1>
+            <p class="mt-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta sequi neque omnis eum,
+                placeat
+                culpa. Vitae in, exercitationem velit cupiditate voluptatem, quo consequuntur quam impedit, minima
+                accusamus
+                optio veniam nam.</p>
 
-        <div class="container card-container mt-5 row justify-content-around gap-4 flex-wrap"></div>
+            <div class="container card-container mt-5 row justify-content-around gap-4 flex-wrap"></div>
+        </section>
+
+        <section class="container mt-5 text-center d-flex flex-column justify-content-center align-items-center">
+            <h2>Add a team member</h2>
+            <div class="card custom-width p-3">
+                <form action="" id="member-form">
+                    <div class="">
+                        <input class="mt-3 form-control" type="text" id="name" placeholder="Nome e Cognome"
+                            autocomplete="off" required>
+                    </div>
+                    <div>
+                        <input class="mt-3 form-control" type="text" id="role" placeholder="Roulo ricoperto"
+                            autocomplete="off" required>
+                    </div>
+                    <div>
+                        <input class="mt-3 form-control" type="email" id="email" placeholder="e-mail" autocomplete="off"
+                            required>
+                    </div>
+                    <div>
+                        <input class="mt-3 form-control" type="text" id="image"
+                            placeholder="Riporta l'url del file immagine" autocomplete="off" required>
+                    </div>
+                    <button type="submit" class="mt-3 btn btn-primary">Aggiungi</button>
+                </form>
+            </div>
+        </section>
     </div>
 
     <script src="./js/script.js"></script>

@@ -38,12 +38,17 @@ const teamMembers = [
 ];
 
 const teamCardCont = document.querySelector(".card-container");
+const userForm = document.getElementById("member-form");
+// const inputs = document.querySelectorAll("#memeber-form input");
+const nameInput = document.getElementById("name");
+const roleInput = document.getElementById("role");
+const emailInput = document.getElementById("email");
+const imgInput = document.getElementById("image");
 
-const renderList = () => {
-  let member = "";
-  for (let i = 0; i < teamMembers.length; i++) {
-    const {name, role, email, img} = teamMembers[i];
-    const memberCard = `
+// funzione per creare card con dati dell'array
+const memberCard = (member) => {
+  const {name, role, email, img} = member;
+  return `
     <div class="card col-lg-5 col-md-10">
       <div class="row">
           <div class="col-4 p-0">
@@ -59,12 +64,53 @@ const renderList = () => {
       </div>
     </div>
     `;
-    console.log(member);    
-    console.log(memberCard);
+};
 
-    member += memberCard;
+const renderList = () => {
+  let elem = "";
+  for (let i = 0; i < teamMembers.length; i++) {
+
+    // prelievo dati di ogni membro nell'array
+    const card = memberCard(teamMembers[i]);
+    elem += card;
+  }  
+  teamCardCont.innerHTML = elem;
+};
+
+// funzione per trasformare dati form in una nuova card
+const selfSubmit = (event) => {
+  event.preventDefault();
+
+  // prelevare tutti i dati del form
+  const name = nameInput.value.trim();
+  const role = roleInput.value.trim();
+  const email = emailInput.value.trim();
+  const img = imgInput.value.trim();
+
+  // creo oggetto nuovo membro
+  const newMember = {
+    name,
+    role,
+    email,
+    img
   }
-  teamCardCont.innerHTML = member;
-}
 
+  // aggiungo oggetto all'array
+  teamMembers.push(newMember);
+  
+  // aggiungo card del nuovo membro alla pagina
+  renderList();
+
+  // reset del form dopo submit
+  userForm.reset();
+};
+
+//////////////////////////
+// INVOCAZIONI FUNZIONI //
+//////////////////////////
+
+// card membri attuali
 renderList();
+
+// submit form
+userForm.addEventListener("submit", selfSubmit);
